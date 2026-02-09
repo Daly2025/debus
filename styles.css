@@ -46,7 +46,7 @@ body {
 }
 
 .logo-img {
-  height: 120px; /* Tamaño aumentado para que se vea aún más grande */
+  height: 150px; /* Tamaño aumentado para que se vea aún más grande */
   width: auto;  /* Mantiene la proporción de la imagen */
   display: block;
 }
