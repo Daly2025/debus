@@ -175,6 +175,14 @@ body {
    MÓVIL
 ========================= */
 @media (max-width: 600px) {
+  html {
+    overflow-x: hidden; /* Asegura que no haya scroll horizontal en el html */
+  }
+  body {
+    overflow-x: hidden; /* Elimina el scroll horizontal en móvil */
+    width: 100%; /* Asegura que el body no exceda el ancho de la pantalla */
+  }
+
   .hero {
     align-items: flex-end;
     background-position: center top;
