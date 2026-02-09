@@ -46,7 +46,7 @@ body {
 }
 
 .logo-img {
-  height: 150px; /* Tamaño aumentado para que se vea aún más grande */
+  height: 180px; /* Tamaño aumentado para que se vea aún más grande */
   width: auto;  /* Mantiene la proporción de la imagen */
   display: block;
 }
@@ -200,8 +200,8 @@ body {
     padding: 2rem 1.5rem;
   }
 
-  .phone {
-    font-size: 1rem;
+  .navbar {
+    padding: 20px 10px; /* Reducir el padding izquierdo para mover el logo más a la izquierda */
   }
 }
 
@@ -223,7 +223,7 @@ body {
 ========================= */
 @media (max-width: 768px) {
   .navbar {
-    padding: 20px;
+    padding: 20px 10px; /* Reducir el padding izquierdo para mover el logo más a la izquierda */
   }
 
   .nav-links {
