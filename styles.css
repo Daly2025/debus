@@ -33,7 +33,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 50px;
+  padding: 20px 20px; /* Reducido el padding lateral */
   z-index: 1000;
   color: white;
 }
@@ -206,19 +206,25 @@ body {
    DESKTOP GRANDE
 ========================= */
 @media (max-width: 768px) {
+  .navbar {
+    padding: 20px;
+  }
+
   .nav-links {
     position: absolute;
-    right: 0;
+    right: -100%; /* Oculto fuera de la pantalla */
     top: 70px;
     background-color: rgba(0, 0, 0, 0.8);
-    width: 100%;
+    width: 50%; /* Ancho del menú */
+    height: auto;
     flex-direction: column;
     align-items: center;
-    display: none;
+    transition: right 0.3s ease-in-out;
+    display: flex; /* Asegurarse de que es flex */
   }
 
   .nav-links.active {
-    display: flex;
+    right: 0; /* Se desliza desde la derecha */
   }
 
   .nav-links li {
