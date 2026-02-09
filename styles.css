@@ -6,7 +6,7 @@
 }
 
 body {
-  background: #000;
+  /* background: #000; */ /* Eliminado para quitar el pie de página negro */
   color: #fff;
 }
 
