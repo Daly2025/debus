@@ -103,8 +103,9 @@ body {
   z-index: 2;
   padding: 2.5rem;
   /* max-width: 620px; */ /* Eliminado para permitir que el texto se ajuste */
-  text-align: right; /* Alinea el texto a la derecha */
-  margin-left: auto; /* Empuja el contenido a la derecha */
+  text-align: left; /* Alinea el texto a la izquierda */
+  margin-right: auto; /* Empuja el contenido a la izquierda */
+  margin-left: 0; /* Asegura que no haya margen automático a la izquierda */
   overflow: hidden; /* Asegura que el texto no sea visible antes de la animación */
 }
 
@@ -113,8 +114,8 @@ body {
   line-height: 1.15;
   letter-spacing: 2px;
   font-family: 'RemachineScript', cursive; /* Aplicar la nueva fuente */
-  color: #000000; /* Color del logo busy.png */
-  animation: slideInFromRight 1s ease-out forwards; /* Aplicar animación */
+  color: #FFD700; /* Color dorado para que coincida con el logo busy.png */
+  animation: slideInFromLeft 1s ease-out forwards; /* Aplicar animación desde la izquierda */
 }
 
 .hero h1 span {
@@ -159,7 +160,7 @@ body {
 .info {
   background: #111;
   padding: 4rem 2rem;
-  text-align: center;
+  text-align: left; /* Cambiado de 'center' a 'left' */
 }
 
 .info h2 {
@@ -180,7 +181,7 @@ body {
 .whatsapp {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 20px; /* Asegurado que esté a la derecha */
   width: 58px;
   height: 58px;
   border-radius: 50%;
@@ -190,7 +191,7 @@ body {
   display: grid;
   place-items: center;
   text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   z-index: 99;
 }
 
@@ -259,6 +260,7 @@ body {
 
   .nav-links.active li a {
     font-family: 'RemachineScript', cursive !important; /* Aplicar la fuente RemachineScript al menú móvil y forzar su aplicación */
+    color: #FFD700 !important; /* Aplicar color dorado a los enlaces del menú móvil */
   }
 
   .nav-links.active {
@@ -292,6 +294,17 @@ body {
 }
 
 /* Definición de la animación */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 @keyframes slideInFromRight {
   0% {
     transform: translateX(100%);
