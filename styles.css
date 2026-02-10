@@ -21,7 +21,8 @@ body {
   background-repeat: no-repeat;
   background-position: center 20%;
   display: flex;
-  align-items: center;
+  align-items: flex-end; /* Alinea el contenido a la parte inferior */
+  justify-content: flex-end; /* Alinea el contenido a la derecha */
 }
 
 /* Estilos de la barra de navegación */
@@ -93,13 +94,19 @@ body {
   position: relative;
   z-index: 2;
   padding: 2.5rem;
-  max-width: 620px;
+  /* max-width: 620px; */ /* Eliminado para permitir que el texto se ajuste */
+  text-align: right; /* Alinea el texto a la derecha */
+  margin-left: auto; /* Empuja el contenido a la derecha */
+  overflow: hidden; /* Asegura que el texto no sea visible antes de la animación */
 }
 
 .hero h1 {
   font-size: clamp(2rem, 5vw, 3.2rem);
   line-height: 1.15;
   letter-spacing: 2px;
+  font-family: 'Playfair Display', serif; /* Aplicar la nueva fuente */
+  color: #DAA520; /* Color dorado más elegante */
+  animation: slideInFromRight 1s ease-out forwards; /* Aplicar animación */
 }
 
 .hero h1 span {
@@ -194,14 +201,17 @@ body {
   .hero {
     align-items: flex-end;
     background-position: center top;
+    justify-content: center; /* Centra el contenido horizontalmente en móvil */
   }
 
   .hero-content {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem; /* Ajusta el padding para móviles */
+    text-align: center; /* Centra el texto en móvil */
+    margin-left: 0; /* Elimina el margen automático en móvil */
   }
 
-  .navbar {
-    padding: 20px 10px; /* Reducir el padding izquierdo para mover el logo más a la izquierda */
+  .phone {
+    font-size: 1rem;
   }
 }
 
@@ -223,7 +233,7 @@ body {
 ========================= */
 @media (max-width: 768px) {
   .navbar {
-    padding: 20px 10px; /* Reducir el padding izquierdo para mover el logo más a la izquierda */
+    padding: 20px;
   }
 
   .nav-links {
@@ -266,5 +276,17 @@ body {
 @media (min-width: 1200px) {
   .hero-content {
     padding-left: 6rem;
+  }
+}
+
+/* Definición de la animación */
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
   }
 }

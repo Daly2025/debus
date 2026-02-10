@@ -1,0 +1,7 @@
+/* Add any specific styles for the Galería page here */
+/* For now, it will inherit most styles from styles.css */
+
+.hero-content h1 {
+  text-align: center;
+  margin-top: 50px; /* Adjust as needed */
+}
