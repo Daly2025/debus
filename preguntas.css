@@ -1,7 +1,18 @@
 /* Add any specific styles for the Preguntas Frecuentes page here */
 /* For now, it will inherit most styles from styles.css */
 
+.hero {
+  background-image: none; /* Elimina la imagen de fondo */
+  background-color: white; /* Establece el fondo blanco */
+}
+
 .hero-content h1 {
   text-align: center;
   margin-top: 50px; /* Adjust as needed */
+  color: black; /* Cambia el color del texto a negro para que sea visible en fondo blanco */
 }
+
+.navbar .nav-links a, .navbar .btn-cita {
+  color: black; /* Cambia el color de los enlaces de navegación a negro */
+}
+
