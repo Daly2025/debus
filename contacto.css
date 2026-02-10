@@ -1,6 +1,10 @@
 /* Add any specific styles for the Contacto page here */
 /* For now, it will inherit most styles from styles.css */
 
+body {
+  font-family: 'Meath', sans-serif; /* Añadido temporalmente para verificar la carga de la fuente */
+}
+
 .hero {
   background-image: none; /* Elimina la imagen de fondo */
   background-color: white; /* Establece el fondo blanco */
@@ -14,5 +18,9 @@
 
 .navbar .nav-links a, .navbar .btn-cita {
   color: black; /* Cambia el color de los enlaces de navegación a negro */
+}
+
+.navbar .logo .logo-img {
+  /* filter: invert(100%); */ /* Comentado para mantener el color original del logo */
 }
 

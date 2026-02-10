@@ -249,6 +249,18 @@ body {
     display: flex; /* Asegurarse de que es flex */
   }
 
+  @font-face {
+    font-family: 'Meath';
+    src: url('img/fonts/MeathFLF.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* Añadido para mejorar la carga de la fuente */
+  }
+
+  .nav-links.active li a { /* Aumentar la especificidad para asegurar que la fuente se aplique */
+    font-family: 'Meath', sans-serif !important; /* Aplicar la fuente Meath al menú móvil y forzar su aplicación */
+  }
+
   .nav-links.active {
     right: 0; /* Se desliza desde la derecha */
   }
