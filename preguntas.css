@@ -9,10 +9,44 @@
 .hero-content h1 {
   text-align: center;
   margin-top: 50px; /* Adjust as needed */
-  color: black; /* Cambia el color del texto a negro para que sea visible en fondo blanco */
+  color: white; /* Cambia el color del texto a blanco para que sea visible en fondo gris */
 }
 
 .navbar .nav-links a, .navbar .btn-cita {
   color: black; /* Cambia el color de los enlaces de navegación a negro */
+}
+
+.faq-container {
+  background-color: transparent; /* Fondo transparente para el contenedor de las preguntas */
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 8px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */ /* Eliminado para que no tenga sombra */
+}
+
+.faq-container details {
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.faq-container summary {
+  font-weight: bold;
+  padding: 15px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1); /* Fondo ligeramente transparente para las preguntas */
+  border-bottom: 1px solid #eee;
+  color: white; /* Color de texto blanco para las preguntas */
+}
+
+.faq-container details[open] summary {
+  border-bottom: 1px solid #ddd;
+}
+
+.faq-container p {
+  padding: 15px;
+  color: white; /* Color de texto blanco para las respuestas */
+  line-height: 1.6;
 }
 
