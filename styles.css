@@ -23,9 +23,9 @@ body {
 ========================= */
 .hero {
   position: relative;
-  min-height: 100vh;
+  min-height: 100vh; /* Revertido a min-height: 100vh */
   background-image: url("img/foto2.jpg");
-  background-size: contain;
+  background-size: contain; /* Revertido a background-size: contain */
   background-repeat: no-repeat;
   background-position: center;
   background-color: #cccccc; /* Fondo gris para rellenar espacios */
