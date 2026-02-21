@@ -23,9 +23,9 @@ body {
 ========================= */
 .hero {
   position: relative;
-  min-height: 100vh;
+  /* min-height: 100vh; */ /* Removed to prevent forced full-height and potential scrolling */
   background-image: url("img/foto2.jpg");
-  background-size: contain;
+  background-size: cover; /* Changed from 'contain' to 'cover' for better background filling */
   background-repeat: no-repeat;
   background-position: center;
   background-color: #cccccc; /* Fondo gris para rellenar espacios */
