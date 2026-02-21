@@ -8,45 +8,41 @@
   <link rel="stylesheet" href="contacto.css" />
 </head>
 <body>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="img/busy.png" alt="Logo DeBustos" class="logo-img">
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="preguntas.html">Preguntas Frecuentes</a></li>
+      <li><a href="galeria.html">Galería</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="https://wa.me/34617788518" class="btn-cita">Reservar Cita</a></li>
+    </ul>
+    <div class="hamburger">&#9776;</div>
+  </nav>
+
   <header class="hero">
-    <nav class="navbar">
-      <div class="logo">
-        <img src="img/busy.png" alt="Logo DeBustos" class="logo-img">
-      </div>
-      <ul class="nav-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="nosotros.html">Nosotros</a></li>
-        <li><a href="preguntas.html">Preguntas Frecuentes</a></li>
-        <li><a href="galeria.html">Galería</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="https://wa.me/34617788518" class="btn-cita">Reservar Cita</a></li>
-      </ul>
-      <div class="hamburger">&#9776;</div>
-    </nav>
     <div class="overlay"></div>
 
     <div class="hero-content">
       <h1>Contacto</h1>
-      <div class="contact-container">
-        <form action="#" method="POST" class="contact-form">
-          <div class="form-group">
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="subject">Asunto:</label>
-            <input type="text" id="subject" name="subject">
-          </div>
-          <div class="form-group">
-            <label for="message">Mensaje:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn">Enviar Mensaje</button>
-        </form>
+      <div class="contact-info">
+        <p>Nuestra Ubicación:</p>
+        <p>Rúa de Barcelona 56, bajo, 36203, Vigo Pontevedra</p>
+        <p>Teléfono: <a href="tel:+34617788518">617 788 518</a></p>
+      </div>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2953.5670800000003!2d-8.729000000000001!3d42.238000000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2f627346cdf2b5%3A0x3f889d1ee75f399d!2sR%C3%BAa%20de%20Barcelona%2C%2056%2C%2036203%20Vigo%2C%20Pontevedra%2C%20Spain!5e0!3m2!1sen!2sus!4v1678901234567!5m2!1sen!2sus"
+          width="600"
+          height="450"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
       </div>
     </div>
   </header>
