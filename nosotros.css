@@ -11,6 +11,7 @@ body {
 #about-us {
     position: relative;
     padding: 60px 20px;
+    padding-top: 200px; /* 🔽 BAJA EL CONTENIDO PARA QUE SE VEA EL LOGO */
     background-image: url('img/debus cortado.jpg');
     background-size: cover;
     background-position: center center;
@@ -18,7 +19,7 @@ body {
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* 🔽 Evita que el contenido quede centrado */
     align-items: center;
     box-sizing: border-box;
 }
@@ -31,7 +32,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(30, 30, 30, 0.45); /* Gris oscuro translúcido */
+    background-color: rgba(30, 30, 30, 0.45);
     z-index: 1;
 }
 
@@ -42,7 +43,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 40px;
-    background-color: rgba(40, 40, 40, 0.5); /* Gris más claro que el fondo */
+    background-color: rgba(40, 40, 40, 0.5);
     border-radius: 12px;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
@@ -68,15 +69,16 @@ body {
         background-size: contain;
         background-position: top center;
         background-color: #000;
+        padding-top: 260px; /* 🔽 MÁS ESPACIO EN MÓVIL PARA EL LOGO */
     }
 
     #about-us::before {
-        background-color: rgba(30, 30, 30, 0.35); /* Más claro aún en móvil */
+        background-color: rgba(30, 30, 30, 0.35);
     }
 
     .about-us-content {
         padding: 20px;
-        background-color: rgba(50, 50, 50, 0.5); /* Gris medio translúcido */
+        background-color: rgba(50, 50, 50, 0.5);
     }
 
     #about-us h2 {
