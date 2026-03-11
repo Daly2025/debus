@@ -2,14 +2,14 @@
 /* For now, it will inherit most styles from styles.css */
 
 body {
-  background-color: white !important;
+  background-color: #bfbfbf !important; /* Gris oscuro medio */
   color: black;
   min-height: 100vh;
 }
 
 .hero {
   background-image: none !important;
-  background-color: white !important;
+  background-color: #bfbfbf !important; /* Mismo gris para consistencia */
   min-height: 100vh;
 }
 

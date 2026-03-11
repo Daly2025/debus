@@ -3,7 +3,7 @@
 
 body {
   font-family: 'Meath', sans-serif;
-  background-color: white !important; /* Forzar blanco */
+  background-color: #bfbfbf !important; /* Gris oscuro medio */
   color: black;
   margin: 0;
   padding: 0;
@@ -12,7 +12,7 @@ body {
 
 .hero {
   background-image: none !important;
-  background-color: white !important;
+  background-color: #bfbfbf !important; /* Mismo gris para consistencia */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
