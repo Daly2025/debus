@@ -4,42 +4,55 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Galería</title>
+
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="galeria.css" />
 </head>
+
 <body>
-  <header class="hero">
+
+  <!-- HEADER SIN FOTO DE PORTADA -->
+  <header class="header-simple">
     <nav class="navbar">
       <div class="logo">
         <img src="img/busy.png" alt="Logo DeBustos" class="logo-img">
       </div>
+
       <ul class="nav-links">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="nosotros.html">Nosotros</a></li>
         <li><a href="preguntas.html">Preguntas Frecuentes</a></li>
-        <li><a href="galeria.html">Galería</a></li>
+        <li><a href="galeria.html" class="active">Galería</a></li>
         <li><a href="contacto.html">Contacto</a></li>
         <li><a href="https://wa.me/34617788518" class="btn-cita">Reservar Cita</a></li>
       </ul>
+
       <div class="hamburger">&#9776;</div>
     </nav>
-    <div class="overlay"></div>
 
-    <div class="hero-content">
-      <h1>Galería</h1>
-      <!-- Content for Gallery page will go here -->
-    </div>
+    <h1 class="titulo-galeria">Galería</h1>
   </header>
 
-  <a
-    href="https://wa.me/34617788518"
-    class="whatsapp"
-    target="_blank"
-    aria-label="WhatsApp"
-  >
-    💬
-  </a>
+  <!-- GALERÍA -->
+  <div class="gallery-container">
+    <img src="img/foto1.jpg" alt="Imagen 1">
+    <img src="img/foto2.jpg" alt="Imagen 2">
+    <img src="img/foto3.jpg" alt="Imagen 3">
+    <img src="img/foto4.jpg" alt="Imagen 4">
+    <img src="img/foto5.jpg" alt="Imagen 5">
+    <img src="img/foto6.jpg" alt="Imagen 6">
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <span class="close-btn" id="closeBtn">&times;</span>
+    <span class="arrow left" id="prevBtn">&#10094;</span>
+    <img id="lightboxImg" src="">
+    <span class="arrow right" id="nextBtn">&#10095;</span>
+  </div>
+
+  <!-- BOTÓN WHATSAPP -->
+  <a href="https://wa.me/34617788518" class="whatsapp" target="_blank" aria-label="WhatsApp">💬</a>
 
   <script src="script.js"></script>
-</body>
-</html>
+  <script src="galeria.js">

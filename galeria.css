@@ -1,29 +1,102 @@
-/* Add any specific styles for the Galería page here */
-/* For now, it will inherit most styles from styles.css */
-
-body {
-  background-color: #bfbfbf !important; /* Gris oscuro medio */
-  color: black;
-  min-height: 100vh;
+/* HEADER SIMPLE SIN FOTO */
+.header-simple {
+    background-color: #111;
+    padding: 40px 0 20px;
+    text-align: center;
 }
 
-.hero {
-  background-image: none !important;
-  background-color: #bfbfbf !important; /* Mismo gris para consistencia */
-  min-height: 100vh;
+.titulo-galeria {
+    color: #fff;
+    font-size: 2.8rem;
+    margin-top: 20px;
 }
 
-.overlay {
-  display: none !important;
+/* --- GALERÍA GRID --- */
+.gallery-container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 18px;
 }
 
-.hero-content h1 {
-  text-align: center;
-  margin-top: 50px;
-  color: black;
+.gallery-container img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform .3s ease, opacity .3s ease;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
 }
 
-.navbar .nav-links a, .navbar .btn-cita, .navbar .hamburger {
-  color: black;
+.gallery-container img:hover {
+    transform: scale(1.05);
+    opacity: 0.85;
 }
 
+/* Fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* --- LIGHTBOX --- */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    transform: scale(0.7);
+    opacity: 0;
+    animation: zoomIn 0.4s ease forwards;
+}
+
+/* Zoom suave */
+@keyframes zoomIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Cerrar */
+.close-btn {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Flechas */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 55px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
+
+.arrow.left { left: 30px; }
+.arrow.right { right: 30px; }
