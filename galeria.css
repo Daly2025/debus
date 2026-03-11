@@ -2,18 +2,19 @@
 /* For now, it will inherit most styles from styles.css */
 
 body {
-  background-color: white;
+  background-color: white !important;
   color: black;
+  min-height: 100vh;
 }
 
 .hero {
-  background-image: none;
-  background-color: white;
+  background-image: none !important;
+  background-color: white !important;
   min-height: 100vh;
 }
 
 .overlay {
-  display: none;
+  display: none !important;
 }
 
 .hero-content h1 {
@@ -22,7 +23,7 @@ body {
   color: black;
 }
 
-.navbar .nav-links a, .navbar .btn-cita {
-  color: black; /* Cambia el color de los enlaces de navegación a negro */
+.navbar .nav-links a, .navbar .btn-cita, .navbar .hamburger {
+  color: black;
 }
 

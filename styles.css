@@ -33,7 +33,7 @@ body {
   background-image: url("img/foto2.jpg");
   background-size: cover; /* Cambiado de 'contain' a 'cover' para un mejor llenado del fondo */
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center top; /* Alinea la imagen arriba para que no corte la cabeza */
   background-color: #cccccc; /* Fondo gris para rellenar espacios */
   display: flex;
   align-items: flex-end; /* Alinea el contenido a la parte inferior */
@@ -227,17 +227,19 @@ body {
   }
 
   .nav-links {
-    position: absolute;
+    position: fixed; /* Cambiado a fixed para que no estire la página verticalmente */
     right: -100%;
-    top: 70px;
-    background-color: rgba(0, 0, 0, 0.9);
-    width: 70%; /* Un poco más ancho para móviles */
-    height: 100vh; /* Que cubra todo el alto */
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    width: 80%; /* Un poco más ancho para usabilidad */
+    height: 100vh;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Centrar enlaces verticalmente */
     transition: right 0.3s ease-in-out;
     display: flex;
     z-index: 1001;
+    padding-top: 60px;
   }
 
   .nav-links.active {
