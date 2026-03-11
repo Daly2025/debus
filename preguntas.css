@@ -51,26 +51,28 @@ html, body {
 
 .faq-container details {
   margin-bottom: 15px;
-  border: 1px solid #ddd;
+  border: 1px solid #999; /* Borde un poco más oscuro */
   border-radius: 5px;
+  background-color: #333; /* Fondo oscuro para resaltar el dorado */
 }
 
 .faq-container summary {
   font-weight: bold;
   padding: 15px;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.05); /* Fondo ligero para las preguntas */
-  border-bottom: 1px solid #eee;
-  color: black; /* Cambiado a negro */
+  background-color: #222; /* Fondo aún más oscuro para el título */
+  border-bottom: 1px solid #444;
+  color: #FFD700; /* Color dorado del logo */
+  /* Fuente original restaurada */
 }
 
 .faq-container details[open] summary {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #FFD700; /* Línea dorada al abrir */
 }
 
 .faq-container p {
   padding: 15px;
-  color: #333; /* Cambiado a gris oscuro/negro */
+  color: #fff; /* Texto blanco para leer sobre fondo oscuro */
   line-height: 1.6;
 }
 
