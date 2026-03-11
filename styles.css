@@ -48,8 +48,8 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 20px 20px; /* Reducido el padding lateral */
+  align-items: flex-start; /* Alinea los elementos arriba en lugar de al centro */
+  padding: 10px 20px; /* Reducido el padding superior/inferior para subirlo más */
   z-index: 1000;
   color: white;
 }
@@ -83,9 +83,15 @@ body {
 }
 
 .btn-cita {
-    background-color: #4CAF50;
+    background-color: #666; /* Cambiado de verde (#4CAF50) a gris (#666) */
     padding: 10px 20px;
     border-radius: 5px;
+    color: white; /* Asegurar texto blanco */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.btn-cita:hover {
+    background-color: #444; /* Gris más oscuro al pasar el mouse */
 }
 
 .hamburger {
@@ -230,19 +236,27 @@ body {
   }
 
   .nav-links {
-    position: fixed; /* Cambiado a fixed para que no estire la página verticalmente */
+    position: fixed;
     right: -100%;
-    top: 0;
+    top: 70px; /* Bajar el menú para que no cubra el logo */
     background-color: rgba(0, 0, 0, 0.95);
-    width: 80%; /* Un poco más ancho para usabilidad */
-    height: 100vh;
+    width: auto; /* Ancho automático según contenido */
+    min-width: 180px; /* Reducido de 250px a 180px para que ocupe menos */
+    max-width: 60%; /* Reducido de 80% a 60% */
+    height: auto; /* Altura automática según contenido */
+    max-height: calc(100vh - 80px); /* No exceder la pantalla menos el espacio superior */
+    overflow-y: auto; /* Scroll si es necesario */
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Centrar enlaces verticalmente */
+    justify-content: flex-start; /* Alineado arriba */
     transition: right 0.3s ease-in-out;
     display: flex;
     z-index: 1001;
-    padding-top: 60px;
+    padding: 10px; /* Reducido de 20px */
+    padding-top: 20px; /* Menos espacio interno arriba */
+    padding-bottom: 20px; /* Espacio inferior */
+    box-shadow: -5px 5px 15px rgba(0,0,0,0.5);
+    border-radius: 10px 0 0 10px; /* Bordes redondeados a la izquierda */
   }
 
   .nav-links.active {
@@ -257,6 +271,16 @@ body {
     font-family: 'RemachineScript', cursive !important;
     color: #FFD700 !important;
     font-size: 1.5rem;
+  }
+
+  /* Cambiar color del botón reservar cita en móvil */
+  .nav-links .btn-cita {
+    background-color: #666 !important; /* Gris */
+    color: #fff !important;
+    font-family: "Helvetica Neue", Arial, sans-serif !important; /* Mantener fuente legible */
+    font-size: 1rem !important;
+    padding: 10px 20px;
+    border-radius: 5px;
   }
 
   .hamburger {
