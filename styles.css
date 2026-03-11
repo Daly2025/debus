@@ -3,7 +3,7 @@ html, body {
   padding: 0;
   box-sizing: border-box;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Evita scroll horizontal globalmente */
   width: 100%;
 }
 
@@ -20,7 +20,7 @@ html, body {
 }
 
 body {
-  background: #000;
+  background: #000; /* Fondo negro por defecto */
   color: #fff;
 }
 
@@ -31,20 +31,16 @@ body {
   position: relative;
   min-height: 100dvh;
   background-image: url("img/foto2.jpg");
-  background-size: cover;
+  background-size: cover; /* Zoom para llenar la pantalla */
   background-repeat: no-repeat;
-  background-position: center 25%;
+  background-position: center 25%; /* Enfocamos la cara (ajustable) */
   background-color: #111;
   display: flex;
-  align-items: center; /* 🔥 ANTES flex-end — ahora centrado vertical */
-  justify-content: flex-start;
-  padding-top: 160px; /* 🔥 espacio para que no se corte el título */
-  padding-bottom: 60px;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
-/* =========================
-   NAVBAR
-========================= */
+/* Estilos de la barra de navegación */
 .navbar {
   position: absolute;
   top: 0;
@@ -52,15 +48,22 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  padding: 10px 20px;
+  align-items: flex-start; /* Alinea los elementos arriba en lugar de al centro */
+  padding: 10px 20px; /* Reducido el padding superior/inferior para subirlo más */
   z-index: 1000;
   color: white;
 }
 
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
 .logo-img {
-  height: 180px;
-  width: auto;
+  height: 180px; /* Tamaño aumentado para que se vea aún más grande */
+  width: auto;  /* Mantiene la proporción de la imagen */
   display: block;
 }
 
@@ -80,15 +83,15 @@ body {
 }
 
 .btn-cita {
-  background-color: #666;
-  padding: 10px 20px;
-  border-radius: 5px;
-  color: white;
-  transition: background-color 0.3s;
+    background-color: #666; /* Cambiado de verde (#4CAF50) a gris (#666) */
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white; /* Asegurar texto blanco */
+    transition: background-color 0.3s; /* Transición suave */
 }
 
 .btn-cita:hover {
-  background-color: #444;
+    background-color: #444; /* Gris más oscuro al pasar el mouse */
 }
 
 .hamburger {
@@ -97,9 +100,7 @@ body {
   font-size: 24px;
 }
 
-/* =========================
-   OVERLAY
-========================= */
+/* Overlay para legibilidad */
 .overlay {
   position: absolute;
   inset: 0;
@@ -110,18 +111,236 @@ body {
   );
 }
 
-/* =========================
-   HERO CONTENT
-========================= */
 .hero-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 100%;
-  padding: 2.5rem;
   position: relative;
   z-index: 2;
-  padding-top: 150px;
+  padding: 2.5rem;
+  /* max-width: 620px; */ /* Eliminado para permitir que el texto se ajuste */
+  text-align: left; /* Alinea el texto a la izquierda */
+  margin-right: auto; /* Empuja el contenido a la izquierda */
+  margin-left: 0; /* Asegura que no haya margen automático a la izquierda */
+  overflow: hidden; /* Asegura que el texto no sea visible antes de la animación */
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.15;
+  letter-spacing: 2px;
+  font-family: 'RemachineScript', cursive; /* Aplicar la nueva fuente */
+  color: #FFD700; /* Color dorado para que coincida con el logo busy.png */
+  animation: slideInFromLeft 1s ease-out forwards; /* Aplicar animación desde la izquierda */
+}
+
+.hero h1 span {
+  font-weight: 300;
+}
+
+.subtitle {
+  margin: 1rem 0 2rem;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  opacity: 0.85;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 1.6rem;
+  border: 1px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+.phone {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+}
+
+.phone a {
+  color: #3cff00;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* =========================
+   INFO
+========================= */
+.info {
+  background: #111;
+  padding: 4rem 2rem;
+  text-align: left; /* Cambiado de 'center' a 'left' */
+}
+
+.info h2 {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  margin-bottom: 1rem;
+}
+
+.info p {
+  max-width: 640px;
+  margin: auto;
+  opacity: 0.8;
+  font-size: 1rem;
+}
+
+/* =========================
+   WHATSAPP
+========================= */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px; /* Asegurado que esté a la derecha */
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  font-size: 1.8rem;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  z-index: 99;
+}
+
+/* =========================
+   MÓVIL
+========================= */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  .logo-img {
+    height: 100px;
+  }
+
+  .hero {
+    align-items: flex-end; /* Alinear contenido al fondo */
+    justify-content: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    padding-bottom: 50px; /* Espacio para que el texto no toque el borde */
+  }
+
+  .navbar {
+    padding: 15px;
+  }
+
+  .nav-links {
+    position: fixed;
+    right: -100%;
+    top: 70px; /* Bajar el menú para que no cubra el logo */
+    background-color: rgba(0, 0, 0, 0.95);
+    width: auto; /* Ancho automático según contenido */
+    min-width: 180px; /* Reducido de 250px a 180px para que ocupe menos */
+    max-width: 60%; /* Reducido de 80% a 60% */
+    height: auto; /* Altura automática según contenido */
+    max-height: calc(100vh - 80px); /* No exceder la pantalla menos el espacio superior */
+    overflow-y: auto; /* Scroll si es necesario */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Alineado arriba */
+    transition: right 0.3s ease-in-out;
+    display: flex;
+    z-index: 1001;
+    padding: 10px; /* Reducido de 20px */
+    padding-top: 20px; /* Menos espacio interno arriba */
+    padding-bottom: 20px; /* Espacio inferior */
+    box-shadow: -5px 5px 15px rgba(0,0,0,0.5);
+    border-radius: 10px 0 0 10px; /* Bordes redondeados a la izquierda */
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li {
+    margin: 20px 0;
+  }
+
+  .nav-links.active li a {
+    font-family: 'RemachineScript', cursive !important;
+    color: #FFD700 !important;
+    font-size: 1.5rem;
+  }
+
+  /* Cambiar color del botón reservar cita en móvil */
+  .nav-links .btn-cita {
+    background-color: #666 !important; /* Gris */
+    color: #fff !important;
+    font-family: "Helvetica Neue", Arial, sans-serif !important; /* Mantener fuente legible */
+    font-size: 1rem !important;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+
+  .hamburger {
+    display: block;
+    color: inherit; /* Usar el color del texto actual */
+  }
+
+  .hero-content {
+    padding: 2rem 1rem;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .phone {
+    font-size: 1rem;
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero {
+    background-position: center 15%;
+  }
+
+  .hero-content {
+    padding: 3rem;
+  }
+}
+
+/* =========================
+   DESKTOP GRANDE
+========================= */
+@media (min-width: 1200px) {
+  .hero-content {
+    padding-left: 6rem;
+  }
+}
+
+/* Definición de la animación */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
