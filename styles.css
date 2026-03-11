@@ -1,8 +1,14 @@
-* {
+html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden; /* Evita scroll horizontal globalmente */
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 @font-face {
@@ -14,7 +20,7 @@
 }
 
 body {
-  /* background: #000; */ /* Eliminado para quitar el pie de página negro */
+  background: #000; /* Fondo negro por defecto */
   color: #fff;
 }
 
@@ -23,9 +29,9 @@ body {
 ========================= */
 .hero {
   position: relative;
-  min-height: 100vh; /* Revertido a min-height: 100vh */
+  min-height: 100dvh; /* Usar 100dvh para una altura de viewport dinámica en móviles */
   background-image: url("img/foto2.jpg");
-  background-size: contain; /* Revertido a background-size: contain */
+  background-size: cover; /* Cambiado de 'contain' a 'cover' para un mejor llenado del fondo */
   background-repeat: no-repeat;
   background-position: center;
   background-color: #cccccc; /* Fondo gris para rellenar espacios */
@@ -199,25 +205,65 @@ body {
 /* =========================
    MÓVIL
 ========================= */
-@media (max-width: 600px) {
-  html {
-    overflow-x: hidden; /* Asegura que no haya scroll horizontal en el html */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
   }
-  body {
-    overflow-x: hidden; /* Elimina el scroll horizontal en móvil */
-    width: 100%; /* Asegura que el body no exceda el ancho de la pantalla */
+
+  .logo-img {
+    height: 100px;
   }
 
   .hero {
-    align-items: flex-end;
-    /* background-position: center top; */ /* Eliminado para consistencia */
-    justify-content: center; /* Centra el contenido horizontalmente en móvil */
+    align-items: center; /* Centrar verticalmente en móvil si es necesario */
+    justify-content: center;
+    min-height: 100vh; /* Asegurar que cubra al menos el viewport */
+  }
+
+  .navbar {
+    padding: 15px;
+  }
+
+  .nav-links {
+    position: absolute;
+    right: -100%;
+    top: 70px;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 70%; /* Un poco más ancho para móviles */
+    height: 100vh; /* Que cubra todo el alto */
+    flex-direction: column;
+    align-items: center;
+    transition: right 0.3s ease-in-out;
+    display: flex;
+    z-index: 1001;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links li {
+    margin: 20px 0;
+  }
+
+  .nav-links.active li a {
+    font-family: 'RemachineScript', cursive !important;
+    color: #FFD700 !important;
+    font-size: 1.5rem;
+  }
+
+  .hamburger {
+    display: block;
+    color: inherit; /* Usar el color del texto actual */
   }
 
   .hero-content {
-    padding: 1.5rem; /* Ajusta el padding para móviles */
-    text-align: center; /* Centra el texto en móvil */
-    margin-left: 0; /* Elimina el margen automático en móvil */
+    padding: 2rem 1rem;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .phone {
@@ -228,60 +274,13 @@ body {
 /* =========================
    TABLET
 ========================= */
-@media (min-width: 601px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   .hero {
     background-position: center 15%;
   }
 
   .hero-content {
     padding: 3rem;
-  }
-}
-
-/* =========================
-   DESKTOP GRANDE
-========================= */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 20px;
-  }
-
-  .nav-links {
-    position: absolute;
-    right: -100%; /* Oculto fuera de la pantalla */
-    top: 70px;
-    background-color: rgba(0, 0, 0, 0.8);
-    width: 50%; /* Ancho del menú */
-    height: auto;
-    flex-direction: column;
-    align-items: center;
-    transition: right 0.3s ease-in-out;
-    display: flex; /* Asegurarse de que es flex */
-  }
-
-  .nav-links.active li a {
-    font-family: 'RemachineScript', cursive !important; /* Aplicar la fuente RemachineScript al menú móvil y forzar su aplicación */
-    color: #FFD700 !important; /* Aplicar color dorado a los enlaces del menú móvil */
-  }
-
-  .nav-links.active {
-    right: 0; /* Se desliza desde la derecha */
-  }
-
-  .nav-links li {
-    margin: 15px 0;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .hero-content {
-    padding: 2rem 1.5rem;
-  }
-
-  .phone {
-    font-size: 1rem;
   }
 }
 

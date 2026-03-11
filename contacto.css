@@ -2,12 +2,23 @@
 /* For now, it will inherit most styles from styles.css */
 
 body {
-  font-family: 'Meath', sans-serif; /* Añadido temporalmente para verificar la carga de la fuente */
+  font-family: 'Meath', sans-serif;
+  background-color: white; /* Asegura que el fondo sea blanco */
+  color: black;
 }
 
 .hero {
-  background-image: none; /* Elimina la imagen de fondo */
-  background-color: white; /* Establece el fondo blanco */
+  background-image: none;
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  display: none; /* Quitar el overlay oscuro en la página de contacto blanca */
 }
 
 .hero-content h1 {

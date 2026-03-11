@@ -1,15 +1,25 @@
 /* Add any specific styles for the Galería page here */
 /* For now, it will inherit most styles from styles.css */
 
+body {
+  background-color: white;
+  color: black;
+}
+
 .hero {
-  background-image: none; /* Elimina la imagen de fondo */
-  background-color: white; /* Establece el fondo blanco */
+  background-image: none;
+  background-color: white;
+  min-height: 100vh;
+}
+
+.overlay {
+  display: none;
 }
 
 .hero-content h1 {
   text-align: center;
-  margin-top: 50px; /* Adjust as needed */
-  color: black; /* Cambia el color del texto a negro para que sea visible en fondo blanco */
+  margin-top: 50px;
+  color: black;
 }
 
 .navbar .nav-links a, .navbar .btn-cita {

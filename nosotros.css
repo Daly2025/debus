@@ -8,17 +8,17 @@ body {
 
 #about-us {
     position: relative;
-    padding: 120px 20px 60px; /* Ajustado el padding superior para la navbar */
-    text-align: center;
+    padding: 60px 20px; /* Reducido el padding vertical */
     background-image: url('img/debus cortado.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 100vh; /* Esto hace que la sección ocupe toda la pantalla */
+    min-height: 100dvh; /* Usar 100dvh para una altura de viewport dinámica en móviles */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box; /* Asegura que el padding se incluya en la altura total */
 }
 
 #about-us::before {
@@ -37,6 +37,7 @@ body {
     z-index: 2;
     max-width: 800px;
     margin: 0 auto;
+    padding-top: 80px; /* Añadir padding superior para separar del header */
 }
 
 #about-us h2 {
