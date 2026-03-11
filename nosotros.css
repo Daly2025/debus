@@ -2,25 +2,28 @@ body {
     color: #fff;
 }
 
+/* HEADER */
 .site-header {
     background-color: #111;
 }
 
+/* SECCIÓN ABOUT US */
 #about-us {
     position: relative;
-    padding: 60px 20px; /* Reducido el padding vertical */
+    padding: 60px 20px;
     background-image: url('img/debus cortado.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
-    min-height: 100dvh; /* Usar 100dvh para una altura de viewport dinámica en móviles */
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box; /* Asegura que el padding se incluya en la altura total */
+    box-sizing: border-box;
 }
 
+/* Overlay gris translúcido uniforme */
 #about-us::before {
     content: '';
     position: absolute;
@@ -28,24 +31,59 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(30, 30, 30, 0.45); /* Gris oscuro translúcido */
     z-index: 1;
 }
 
+/* Caja de contenido con fondo gris suave */
 .about-us-content {
     position: relative;
     z-index: 2;
     max-width: 800px;
     margin: 0 auto;
-    padding-top: 80px; /* Añadir padding superior para separar del header */
+    padding: 40px;
+    background-color: rgba(40, 40, 40, 0.5); /* Gris más claro que el fondo */
+    border-radius: 12px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
 
 #about-us h2 {
     margin-bottom: 20px;
     font-size: 2.5em;
+    font-weight: 700;
 }
 
 #about-us p {
-    font-size: 1.1em;
-    line-height: 1.6;
+    font-size: 1.15em;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+/* ------------------------------
+   RESPONSIVE
+--------------------------------*/
+@media (max-width: 768px) {
+
+    #about-us {
+        background-size: contain;
+        background-position: top center;
+        background-color: #000;
+    }
+
+    #about-us::before {
+        background-color: rgba(30, 30, 30, 0.35); /* Más claro aún en móvil */
+    }
+
+    .about-us-content {
+        padding: 20px;
+        background-color: rgba(50, 50, 50, 0.5); /* Gris medio translúcido */
+    }
+
+    #about-us h2 {
+        font-size: 2em;
+    }
+
+    #about-us p {
+        font-size: 1.05em;
+    }
 }
